@@ -7,6 +7,7 @@ How to run the App:
 
 - clone the repo
 - copy .env.example to .env
+- create mysql db `mini_ewallet`
 - run `yarn install`
 - run `sequelize db:migrate`
 - run `sequelize db:seed:all`
