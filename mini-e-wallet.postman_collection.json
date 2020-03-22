@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "af73c629-2732-4f2d-bc5d-016efdd633ae",
+		"name": "mini-e-wallet",
+		"description": "mini-e-wallet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"bagusbudy@gmail.com\",\n\t\"password\": \"1234\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJlbWFpbCI6ImJhZ3VzYnVkeUBnbWFpbC5jb20ifSwidW5pcXVlV29yZCI6ImthanNiZGtqYXNuZCIsImlhdCI6MTU4NDg2OTUzMSwiZXhwIjoxNTg1MDQyMzMxfQ.CzdQFLnBaAbaz6GxIX6tHraziQTV_cGGDsUX2jCi0i0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/auth/logout",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"logout"
+					]
+				},
+				"description": "Logout"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Banks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJlbWFpbCI6ImJhZ3VzYnVkeUBnbWFpbC5jb20ifSwidW5pcXVlV29yZCI6ImthanNiZGtqYXNuZCIsImlhdCI6MTU4NDg2OTUzMSwiZXhwIjoxNTg1MDQyMzMxfQ.CzdQFLnBaAbaz6GxIX6tHraziQTV_cGGDsUX2jCi0i0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/banks",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"banks"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TopUp",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJlbWFpbCI6ImJhZ3VzYnVkeUBnbWFpbC5jb20ifSwidW5pcXVlV29yZCI6ImthanNiZGtqYXNuZCIsImlhdCI6MTU4NDg2OTUzMSwiZXhwIjoxNTg1MDQyMzMxfQ.CzdQFLnBaAbaz6GxIX6tHraziQTV_cGGDsUX2jCi0i0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"amount\": 75000,\n\t\"bankId\": 2,\n\t\"location\": \"Jakarta\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/balance/topup",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"balance",
+						"topup"
+					]
+				},
+				"description": "Topup balance"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Balance",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJlbWFpbCI6ImJhZ3VzYnVkeUBnbWFpbC5jb20ifSwidW5pcXVlV29yZCI6ImthanNiZGtqYXNuZCIsImlhdCI6MTU4NDg2OTUzMSwiZXhwIjoxNTg1MDQyMzMxfQ.CzdQFLnBaAbaz6GxIX6tHraziQTV_cGGDsUX2jCi0i0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/balance/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"balance",
+						"1"
+					]
+				},
+				"description": "get balance"
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJlbWFpbCI6ImJhZ3VzYnVkeUBnbWFpbC5jb20ifSwidW5pcXVlV29yZCI6ImthanNiZGtqYXNuZCIsImlhdCI6MTU4NDg1NzY3MSwiZXhwIjoxNTg1MDMwNDcxfQ.aer8KJhAqXR2n0LnoFtAX8d5o_dTyqcjRP00hmzpgUQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"amount\": 5000,\n\t\"userIdDestination\": 2,\n\t\"location\": \"Jakarta\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/balance/transfer",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"balance",
+						"transfer"
+					]
+				},
+				"description": "Transfer Balance"
+			},
+			"response": []
+		}
+	]
+}
