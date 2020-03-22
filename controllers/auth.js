@@ -52,7 +52,7 @@ module.exports = {
         buildResponse.fail(res, 'Wrong email or password' , 401)
       }
     })
-    .catch(handleError)
+    .catch(err => {handleError(err, res)})
   },
 
   logout: (req, res) => {
@@ -73,7 +73,7 @@ module.exports = {
         .then(() => {
           buildResponse.success(res, 'successfully logout')
         })
-        .catch(handleError)
+        .catch(err => {handleError(err, res)})
       } else {
         if(err.name == 'TokenExpiredError') buildResponse.success(res, 'successfully logout')
         else buildResponse.fail(res, "Invalid Token")

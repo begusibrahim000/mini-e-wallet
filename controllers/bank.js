@@ -1,5 +1,3 @@
-require('dotenv').config()
-
 const buildResponse     = require('../helpers/buildResponse')
 const handleError       = require('../helpers/handleError')
 const models            = require('../models')
@@ -13,6 +11,6 @@ module.exports = {
     .then(banks => {
       buildResponse.success(res, banks)
     })
-    .catch(handleError)
+    .catch(err => {handleError(err, res)})
   },
 }

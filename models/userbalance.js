@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   UserBalance.associate = function(models) {
     // associations can be defined here
+    UserBalance.belongsTo(models.User)
   };
   return UserBalance;
 };
