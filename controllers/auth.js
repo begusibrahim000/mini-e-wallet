@@ -4,6 +4,7 @@ const jwt               = require('jsonwebtoken')
 require('dotenv').config()
 
 const buildResponse     = require('../helpers/buildResponse')
+const handleError       = require('../helpers/handleError')
 const models            = require('../models')
 const User              = models.User
 const InvalidToken      = models.InvalidToken
@@ -26,7 +27,7 @@ module.exports = {
               jwt.sign({
                 user        : { id: user.id, email: user.email },
                 uniqueWord  : process.env.JWT_UNIQUE_WORD
-              }, process.env.JWT_SECRET, { expiresIn: 1000 }, (err, token) => {
+              }, process.env.JWT_SECRET, { expiresIn: "2 days" }, (err, token) => {
                 if(!err) {
                   let payload = {
                     token,
@@ -51,9 +52,7 @@ module.exports = {
         buildResponse.fail(res, 'Wrong email or password' , 401)
       }
     })
-    .catch(err => {
-      buildResponse.error(res, err)
-    })
+    .catch(handleError)
   },
 
   logout: (req, res) => {
@@ -74,9 +73,7 @@ module.exports = {
         .then(() => {
           buildResponse.success(res, 'successfully logout')
         })
-        .catch(err => {
-          buildResponse.error(res, err)
-        })
+        .catch(handleError)
       } else {
         if(err.name == 'TokenExpiredError') buildResponse.success(res, 'successfully logout')
         else buildResponse.fail(res, "Invalid Token")
